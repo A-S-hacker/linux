@@ -1,12 +1,29 @@
-mkdir backup
-tar -cvf backup.tar backup       -> create archive
-tar -xvf backup.tar               -> extract archive
-tar -tvf backup.tar              -> list content
+# Create tar archive
+tar -cvf backup.tar folder/
 
+# Extract tar archive
+tar -xvf backup.tar
+
+# Compress using gzip
 gzip file.txt
+
+# Decompress gzip
 gunzip file.txt.gz
 
+# Compress using bzip2
 bzip2 file.txt
-bzip2 -d file.txt.bz2
 
+# Decompress bzip2
+bunzip2 file.txt.bz2
+
+# Create tar.gz
 tar -czvf backup.tar.gz folder/
+
+# Extract tar.gz
+tar -xzvf backup.tar.gz
+
+# Create tar.bz2
+tar -cjvf backup.tar.bz2 folder/
+
+# Extract tar.bz2
+tar -xjvf backup.tar.bz2
