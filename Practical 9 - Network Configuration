@@ -1,0 +1,88 @@
+echo "practical9"
+date
+uname
+pwd
+whoami
+ls
+mkdir Practical9
+ls
+pwd
+cd Practical9
+cd ..
+pwd
+
+ip link show
+ip addr show
+ip a
+ip addr show eth0
+ip -s link show eth0
+
+sudo apt install net-tools -y
+ifconfig
+
+ip route show
+ip neigh show
+
+sudo ip addr add 192.168.100.50/24 dev eth0
+ip addr show eth0
+sudo ip addr del 192.168.100.50/24 dev eth0
+ip addr show eth0
+
+ip -4 addr show
+ip -6 addr show
+sudo ip -6 addr add 2001:db8::1/64 dev eth0
+ip -6 addr show eth0
+sudo ip -6 addr del 2001:db8::1/64 dev eth0
+
+hostname
+hostnamectl
+cat /etc/resolv.conf
+resolvectl status
+
+man nslookup
+nslookup google.com
+nslookup apple.com
+
+man dig
+dig google.com
+dig meta.com
+dig google.com MX
+
+echo "127.0.0.1 myserver.local" | sudo tee -a /etc/hosts
+
+man ping
+ping -c 2 myserver.local
+ping -c 4 10.0.2.2
+ping -c 4 google.com
+
+man traceroute
+traceroute google.com
+traceroute amazon.com
+sudo apt install traceroute -y
+
+sudo systemctl status NetworkManager
+sudo apt install network-manager -y
+sudo systemctl enable --now NetworkManager
+
+man nmcli
+nmcli connection show
+nmcli device status
+nmcli connection show "Wired connection 1"
+
+sudo nmcli connection add type ethernet con-name testcon ifname eth0 ip4 192.168.50.20/24 gw4 192.168.50.1
+
+sudo nmcli connection modify testcon ipv4.dns "8.8.8.8 8.8.4.4"
+
+nmcli connection show testcon | grep "testcon"
+
+sudo nmcli connection delete testcon
+
+nmcli connection show testcon | grep "testcon"
+
+sudo nmtui
+
+ip addr show eth0
+ping -c 4 10.0.2.2
+
+sudo ss -tulnp
+ip route show
