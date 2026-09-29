@@ -11,6 +11,18 @@ sudo -i
 sudo -u rahul command
 sudo usermod -aG sudo rahul
 
+1. Create new user
+sudo adduser username
+
+2. set new password
+sudo passwd username
+
+3. Login as another user
+su username
+
+
+
+
 # Working with text files
 cat /etc/os-release
 cut -d: -f1 /etc/passwd
